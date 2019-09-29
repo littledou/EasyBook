@@ -56,6 +56,7 @@ class CatalogActivity : AppCompatActivity(), CatalogAdapter.CatalogSelectListene
                 @SuppressLint("SetTextI18n")
                 override fun onFinish(t: List<Catalog>) {
                     val arrayList = ArrayList<Catalog>(t)
+                    arrayList.reverse()
                     adapter.freshCatalogs(arrayList)
                     book_loading.visibility = View.GONE
                     catalog_intro.text = 12288.toChar().toString() + 12288.toChar() + book.introduce
